@@ -1,5 +1,5 @@
 server:
-  port: 8968
+  port: 8966
 
 eureka:
   client:
@@ -8,4 +8,4 @@ eureka:
 
 spring:
   application:
-      name: nephelo-user
+      name: nephelo-oss

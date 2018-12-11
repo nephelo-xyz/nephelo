@@ -12,6 +12,7 @@
         <module>nephelo-common</module>
         <module>nephelo-center</module>
         <module>nephelo-user</module>
+        <module>nephelo-oss</module>
     </modules>
 
 

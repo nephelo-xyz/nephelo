@@ -1,0 +1,50 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Java template
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+.gitignore
+.idea/libraries/Maven__com_googlecode_javaewah_JavaEWAH_1_1_6.xml
+.idea/libraries/Maven__com_jcraft_jsch_0_1_54.xml
+.idea/libraries/Maven__com_jcraft_jzlib_1_1_1.xml
+.idea/libraries/Maven__io_lettuce_lettuce_core_5_1_3_RELEASE.xml
+.idea/libraries/Maven__io_netty_netty_buffer_4_1_31_Final.xml
+.idea/libraries/Maven__io_netty_netty_codec_4_1_31_Final.xml
+.idea/libraries/Maven__io_netty_netty_common_4_1_31_Final.xml
+.idea/libraries/Maven__io_netty_netty_handler_4_1_31_Final.xml
+.idea/libraries/Maven__io_netty_netty_resolver_4_1_31_Final.xml
+.idea/libraries/Maven__io_netty_netty_transport_4_1_31_Final.xml
+.idea/libraries/Maven__io_projectreactor_reactor_core_3_2_3_RELEASE.xml
+.idea/libraries/Maven__org_eclipse_jgit_org_eclipse_jgit_5_1_3_201810200350_r.xml
+.idea/libraries/Maven__org_eclipse_jgit_org_eclipse_jgit_http_apache_5_1_3_201810200350_r.xml
+.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml
+.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_1_1_RELEASE.xml
+.idea/libraries/Maven__org_springframework_cloud_spring_cloud_config_client_2_1_0_M3.xml
+.idea/libraries/Maven__org_springframework_cloud_spring_cloud_config_server_2_1_0_M3.xml
+.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_config_2_1_0_M3.xml
+.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_3_RELEASE.xml
+.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_1_3_RELEASE.xml
+.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_1_3_RELEASE.xml
+.idea/libraries/Maven__org_springframework_spring_oxm_5_1_3_RELEASE.xml
+.idea/libraries/Maven__org_springframework_spring_tx_5_1_3_RELEASE.xml

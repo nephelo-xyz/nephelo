@@ -1,3 +1,15 @@
+#spring:
+#  profiles:
+#    active: dev
+
+server:
+  port: 8968
+
+eureka:
+  client:
+      serviceUrl:
+          defaultZone: http://localhost:8962/eureka/
+
 spring:
-  profiles:
-    active: dev
+  application:
+      name: nephelo-user

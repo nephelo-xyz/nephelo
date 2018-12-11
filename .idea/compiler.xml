@@ -24,6 +24,7 @@
         <processorPath useClasspath="true" />
         <module name="nephelo-center" />
         <module name="nephelo-common" />
+        <module name="nephelo-oss" />
         <module name="nephelo-user" />
       </profile>
     </annotationProcessing>
@@ -31,6 +32,7 @@
       <module name="nephelo" target="1.5" />
       <module name="nephelo-center" target="1.8" />
       <module name="nephelo-common" target="1.5" />
+      <module name="nephelo-oss" target="1.8" />
       <module name="nephelo-user" target="1.8" />
     </bytecodeTargetLevel>
   </component>

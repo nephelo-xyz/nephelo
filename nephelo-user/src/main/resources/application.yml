@@ -12,10 +12,26 @@ eureka:
 
 spring:
   application:
-      name: nephelo-user
+    name: nephelo-user
+  datasource:
+    name: nephelo-datasource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/nephelo?useUnicode=true&characterEncoding=UTF8
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: yanlin@123
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
 
-jdbc:
-  driver: jdbc:mysql://localhost:3306/fcat?useUnicode=true&characterEncoding=UTF8
-  url:
-  username:
-  password:
+

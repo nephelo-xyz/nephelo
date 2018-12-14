@@ -1,33 +1,19 @@
 package com.nephelo.user.controller;
 
-import com.nephelo.user.bean.TUser;
+import com.nephelo.user.service.UserCacheService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
-
+@RestController
 public class UserCacheController {
     @Autowired
-    private RedisTemplate<String, Serializable> redisCacheTemplate;
+    UserCacheService userCacheService;
 
-    @GetMapping(value = "/cache/user/cacheUser")
+    @GetMapping(value = "getUser", params = "id")
     @ResponseBody
-    public Map<String, Object> cacheUser() {
-
-        Map<String, Object> result = new HashMap<String, Object>();
-        result.put("code", "000000");
-        result.put("msg", "success");
-        TUser u = new TUser();
-
-        u.setObjectId("38a8b5cc767b48768d91e584c0243243");
-        u.setUsername("admin");
-        u.setPassword("admin");
-        result.put("data", u);
-        redisCacheTemplate.opsForValue().set(String.valueOf(u.getObjectId()), u);
-        return result;
+    public String getUser() {
+        return userCacheService.getUser("id");
     }
 }

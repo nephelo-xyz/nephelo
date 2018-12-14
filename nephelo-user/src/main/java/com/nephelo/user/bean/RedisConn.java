@@ -1,5 +1,6 @@
 package com.nephelo.user.bean;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -9,8 +10,16 @@ public class RedisConn {
     private String host;
     //prefix+参数名  对应于配置文件config.properties中的spring.redis.*信息
     private int port;
-
     private int timeout;
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getHost() {
         return host;

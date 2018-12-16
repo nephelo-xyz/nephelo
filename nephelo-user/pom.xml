@@ -24,6 +24,12 @@
     <dependencies>
         <dependency>
             <groupId>com.nephelo</groupId>
+            <artifactId>nephelo-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.nephelo</groupId>
             <artifactId>nephelo-common</artifactId>
             <version>1.0-SNAPSHOT </version>
         </dependency>

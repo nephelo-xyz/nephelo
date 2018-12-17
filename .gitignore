@@ -26,5 +26,6 @@ hs_err_pid*
 
 .gitignore
 .idea
+.git
 nephelo-common/nephelo-common.iml
 nephelo-oss/nephelo-oss.iml

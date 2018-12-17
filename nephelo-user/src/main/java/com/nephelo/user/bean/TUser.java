@@ -2,16 +2,18 @@ package com.nephelo.user.bean;
 
 import lombok.Data;
 
-import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
-import javax.persistence.*;
 
 @Table(name = "t_user")
 @Data
-public class TUser implements Serializable {
+public class TUser {
     @Id
-    @GeneratedValue(generator="JDBC")
-    private String objectId;
+    @GeneratedValue(generator = "JDBC")
+    private Integer id;
 
     private String username;
 
@@ -42,12 +44,12 @@ public class TUser implements Serializable {
     @Column(name = "update_time")
     private Date updateTime;
 
-    public String getObjectId() {
-        return objectId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setObjectId(String objectId) {
-        this.objectId = objectId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getUsername() {

@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class TUserLogServiceImpl
-        extends BaseServiceImpl<TUserLogMapper, TUserLog> implements TUserLogService {
+@Service("TUserLogService")
+public class TUserLogServiceImpl extends BaseServiceImpl<TUserLogMapper,TUserLog>
+        implements TUserLogService {
     @Override
     public List<TUserLog> listByPageNewRecord() {
-        return null;
+        return mapper.listByPageNewRecord();
     }
 }

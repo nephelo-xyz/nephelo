@@ -1,4 +1,4 @@
-package com.nephelo.user.config;
+package com.nephelo.common.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;

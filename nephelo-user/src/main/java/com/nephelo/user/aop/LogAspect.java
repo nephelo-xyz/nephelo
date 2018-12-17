@@ -13,10 +13,12 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
 import java.util.Date;
@@ -31,20 +33,22 @@ import java.util.Map;
 @Aspect
 @Component
 public class LogAspect {
+
     private static final Logger logger = LoggerFactory.getLogger(LogAspect.class);
     private static final ThreadLocal<Long> timeTreadLocal = new ThreadLocal<>();
 
     @Autowired
+    @Qualifier("TUserLogService")
     private TUserLogService tUserLogService;
 
-    @Pointcut("execution(* com.nephelo.user.controller..*.*(..)) && @annotation(org.springframework.web.bind" +
-            ".annotation.RequestMapping)")
-    //@Pointcut("execution(* com.xfdmao.fcat.user.controller..*(..))")
+    @Pointcut("execution(* com.nephelo.user.controller..*.*(..)) &&" +
+            " @annotation(org.springframework.web.bind.annotation.RequestMapping)")
+//    @Pointcut("execution(* com.nephelo.user.controller..*(..))")
     public void log() {
     }
 
     @Before("log()")
-    public void before(JoinPoint joinPoint) {
+    public void before(JoinPoint joinPoint) throws Throwable {
         timeTreadLocal.set(System.currentTimeMillis());
         // 接收到请求，记录请求内容
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();

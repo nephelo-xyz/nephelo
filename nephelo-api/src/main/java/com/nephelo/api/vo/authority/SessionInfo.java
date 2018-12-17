@@ -39,5 +39,47 @@ public class SessionInfo implements Serializable{
 	 */
 	private String[] roles;
 
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
 
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public TUserVo gettUserVo() {
+		return tUserVo;
+	}
+
+	public void settUserVo(TUserVo tUserVo) {
+		this.tUserVo = tUserVo;
+	}
+
+	public String[] getPermissions() {
+		return permissions;
+	}
+
+	public void setPermissions(String[] permissions) {
+		this.permissions = permissions;
+	}
+
+	public String[] getRoles() {
+		return roles;
+	}
+
+	public void setRoles(String[] roles) {
+		this.roles = roles;
+	}
 }

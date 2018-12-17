@@ -3,7 +3,7 @@ spring:
         name: nephelo-center
 
 server:
-    port: 8962
+    port: 4001
 
 eureka:
     client:

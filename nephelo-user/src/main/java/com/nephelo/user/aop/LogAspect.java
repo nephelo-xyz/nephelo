@@ -37,8 +37,7 @@ public class LogAspect {
     private static final Logger logger = LoggerFactory.getLogger(LogAspect.class);
     private static final ThreadLocal<Long> timeTreadLocal = new ThreadLocal<>();
 
-    @Autowired
-    @Qualifier("TUserLogService")
+    @Resource
     private TUserLogService tUserLogService;
 
     @Pointcut("execution(* com.nephelo.user.controller..*.*(..)) &&" +

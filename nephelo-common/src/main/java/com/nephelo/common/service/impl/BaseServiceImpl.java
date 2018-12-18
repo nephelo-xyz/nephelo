@@ -1,13 +1,11 @@
 package com.nephelo.common.service.impl;
 
 import com.nephelo.common.service.BaseService;
-import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.common.BaseMapper;
 
 import javax.annotation.Resource;
 import java.util.List;
 
-@Service
 public abstract class BaseServiceImpl<M extends BaseMapper<T>, T> implements BaseService<T> {
     @Resource
     protected M mapper;

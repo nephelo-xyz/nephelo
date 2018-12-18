@@ -19,7 +19,6 @@ import com.nephelo.user.service.TUserService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -29,7 +28,7 @@ import java.util.List;
 /**
  * Created by nephelo on 2018-12-11.
  */
-@Controller
+@RestController
 public class TUserController extends BaseController<TUserService, TUser,Integer> {
     @Autowired
     private TMenuService tMenuService;

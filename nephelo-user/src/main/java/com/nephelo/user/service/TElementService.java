@@ -6,9 +6,6 @@ import com.nephelo.user.po.TElementVo;
 
 import java.util.List;
 
-/**
- * Created by xiangfei on 2017/10/16.
- */
 public interface TElementService extends BaseService<TElement> {
 
     List<TElement> getListByMenuId(Integer menuId);

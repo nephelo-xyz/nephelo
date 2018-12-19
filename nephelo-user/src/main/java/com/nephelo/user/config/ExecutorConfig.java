@@ -7,9 +7,6 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ThreadPoolExecutor;
 
-/**
- * Created by fier on 2018/09/20
- */
 @Configuration
 public class ExecutorConfig {
     /** Set the ThreadPoolExecutor's core pool size.

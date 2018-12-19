@@ -16,9 +16,8 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @ServletComponentScan("com.neohelo.user.config.druid")
 @EnableRedisHttpSession(redisFlushMode = RedisFlushMode.IMMEDIATE)
 @EnableAsync
-@MapperScan("com.nephelo.user.mapper")
 public class NepheloUserApplication {
-	public static void main(String[] args) {
-		SpringApplication.run(NepheloUserApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(NepheloUserApplication.class, args);
+    }
 }

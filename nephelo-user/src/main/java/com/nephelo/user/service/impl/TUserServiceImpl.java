@@ -1,10 +1,10 @@
 package com.nephelo.user.service.impl;
 
 import com.nephelo.common.service.impl.BaseServiceImpl;
+import com.nephelo.user.constant.UserConstant;
 import com.nephelo.user.bean.TGroup;
 import com.nephelo.user.bean.TUser;
 import com.nephelo.user.bean.TUserGroup;
-import com.nephelo.user.constant.UserConstant;
 import com.nephelo.user.mapper.TUserMapper;
 import com.nephelo.user.service.TGroupService;
 import com.nephelo.user.service.TUserGroupService;
@@ -14,8 +14,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("TUserService")
-public class TUserServiceImpl extends BaseServiceImpl<TUserMapper, TUser> implements TUserService {
+@Service
+public class TUserServiceImpl extends BaseServiceImpl<TUserMapper,TUser> implements TUserService{
+
     @Autowired
     private TUserGroupService tUserGroupService;
     @Autowired

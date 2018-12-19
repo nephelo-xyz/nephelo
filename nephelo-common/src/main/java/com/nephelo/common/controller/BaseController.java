@@ -9,70 +9,68 @@ import com.nephelo.common.util.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BaseController<BaseServiceImpl extends BaseService, Entity, T> {
+public class BaseController<BaseServiceImpl extends BaseService,Entity,T> {
     @Autowired
     protected HttpServletRequest request;
-    @Resource
+    @Autowired
     protected BaseServiceImpl baseServiceImpl;
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/add",method = RequestMethod.POST)
     @ResponseBody
-    public JSONObject add(@RequestBody Entity entity) {
-        int result = baseServiceImpl.insertSelective(entity);
-        if (result == 0) {
+    public JSONObject add(@RequestBody Entity entity){
+        int result= baseServiceImpl.insertSelective(entity);
+        if(result==0){
             return JsonUtil.getFailJsonObject();
-        } else {
+        }else{
             return JsonUtil.getSuccessJsonObject();
         }
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}",method = RequestMethod.GET)
     @ResponseBody
-    public JSONObject get(@PathVariable T id) {
+    public JSONObject get(@PathVariable T id){
         return JsonUtil.getSuccessJsonObject(baseServiceImpl.selectById(id));
     }
 
-    @RequestMapping(value = "/update", method = RequestMethod.PUT)
+    @RequestMapping(value = "/update",method = RequestMethod.PUT)
     @ResponseBody
-    public JSONObject update(@RequestBody Entity entity) {
-        int result = baseServiceImpl.updateById(entity);
-        if (result == 0) {
+    public JSONObject update(@RequestBody Entity entity){
+        int result= baseServiceImpl.updateById(entity);
+        if(result==0){
             return JsonUtil.getFailJsonObject();
-        } else {
+        }else{
+            return JsonUtil.getSuccessJsonObject();
+        }
+    }
+    @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
+    @ResponseBody
+    public JSONObject remove(@PathVariable T id){
+        int result= baseServiceImpl.deleteById(id);
+        if(result <= 0){
+            return JsonUtil.getFailJsonObject();
+        }else{
             return JsonUtil.getSuccessJsonObject();
         }
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/all",method = RequestMethod.GET)
     @ResponseBody
-    public JSONObject remove(@PathVariable T id) {
-        int result = baseServiceImpl.deleteById(id);
-        if (result <= 0) {
-            return JsonUtil.getFailJsonObject();
-        } else {
-            return JsonUtil.getSuccessJsonObject();
-        }
-    }
-
-    @RequestMapping(value = "/all", method = RequestMethod.GET)
-    @ResponseBody
-    public JSONObject list() {
+    public JSONObject list(){
         return JsonUtil.getSuccessJsonObject(baseServiceImpl.selectListAll());
     }
 
-    @RequestMapping(value = "/listByPage", method = RequestMethod.GET)
+    @RequestMapping(value = "/listByPage",method = RequestMethod.GET)
     @ResponseBody
-    public JSONObject listByPage(Integer pageNum, Integer pageSize) {
+    public JSONObject listByPage(Integer pageNum, Integer pageSize){
 
-        pageNum = pageNum == null ? CommonConstant.PAGE_NUM : pageNum;
-        pageSize = pageSize == null ? CommonConstant.PAGE_SIZE : pageSize;
+        pageNum = pageNum == null? CommonConstant.PAGE_NUM:pageNum;
+        pageSize = pageSize == null?CommonConstant.PAGE_SIZE:pageSize;
 
         PageHelper.startPage(pageNum, pageSize);
         List<Entity> list = baseServiceImpl.selectListAll();
@@ -83,16 +81,15 @@ public class BaseController<BaseServiceImpl extends BaseService, Entity, T> {
 
     /**
      * 获取所有请求参数，封装为map对象
-     *
      * @return
      */
-    public Map<String, Object> getParameterMap() {
+    public Map<String,Object> getParameterMap(){
         Enumeration<String> enumeration = request.getParameterNames();
-        Map<String, Object> parameterMap = new HashMap<String, Object>();
-        while (enumeration.hasMoreElements()) {
+        Map<String,Object> parameterMap = new HashMap<String,Object>();
+        while (enumeration.hasMoreElements()){
             String key = enumeration.nextElement();
             String value = request.getParameter(key);
-            parameterMap.put(key, value);
+            parameterMap.put(key,value);
         }
         return parameterMap;
     }

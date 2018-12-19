@@ -29,3 +29,6 @@ hs_err_pid*
 .git
 nephelo-common/nephelo-common.iml
 nephelo-oss/nephelo-oss.iml
+
+*.iml
+*.patch

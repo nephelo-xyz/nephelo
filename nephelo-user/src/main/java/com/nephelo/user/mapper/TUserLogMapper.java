@@ -1,12 +1,11 @@
 package com.nephelo.user.mapper;
 
 import com.nephelo.user.bean.TUserLog;
-import org.mapstruct.Mapper;
-import tk.mybatis.mapper.common.BaseMapper;
+import org.springframework.stereotype.Repository;
+import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
 
-@Mapper
-public interface TUserLogMapper extends BaseMapper<TUserLog> {
+public interface TUserLogMapper extends Mapper<TUserLog> {
     List<TUserLog> listByPageNewRecord();
 }

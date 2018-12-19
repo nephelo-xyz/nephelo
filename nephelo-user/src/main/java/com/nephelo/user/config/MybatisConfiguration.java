@@ -131,7 +131,7 @@ public class MybatisConfiguration implements EnvironmentAware {
         this.poolPreparedStatements = propertyResolver.getProperty("spring.datasource.poolPreparedStatements");
         this.maxOpenPreparedStatements = propertyResolver.getProperty("spring.datasource.maxOpenPreparedStatements");
         this.typeAliasesPackage = propertyResolver.getProperty("mybatis.typeAliasesPackage");
-        this.xmlLocation = propertyResolver.getProperty("mybatis.mapper-Location");
+        this.xmlLocation = propertyResolver.getProperty("mybatis.xmlLocation");
     }
 
     @Bean

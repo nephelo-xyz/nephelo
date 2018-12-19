@@ -1,0 +1,96 @@
+#spring:
+#  profiles:
+#    active: dev
+
+server:
+  port: 4002
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:4001/eureka/
+
+spring:
+  application:
+    name: nephelo-user
+  datasource:
+    name: nephelo-datasource
+    # jdbc-connector6之后名字变成下面这个,而且必须加入allowPublicKeyRetrieval=true参数
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/nephelo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: yanlin@123
+    filters: stat,wall,log4j
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+    logSlowSql: true
+    #durid登陆账号密码
+    loginUsername: admin
+    loginPassword: admin
+  #### redis
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password:
+    timeout: 60 # 数据库连接超时时间，2.0 中该参数的类型为Duration，这里在配置的时候需要指明单位
+    # 连接池配置，2.0中直接使用jedis或者lettuce配置连接池
+    pool:
+      max-active: 8 #连接池最大连接数（使用负值表示没有限制）mybatis
+      min-idle: 0
+      max-idle: 0 # 连接池中的最大空闲连接
+      max-wait: -1 #连接池最大阻塞等待时间（使用负值表示没有限制）
+
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000 #缺省为1000
+
+# Mybatis 自身配置
+mybatis:
+  basepackage: com.nephelo.user.mapper
+  xmlLocation: classpath:mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true # 驼峰命名规范开启
+
+mapper:
+  identity: MYSQL
+  mappers: tk.mybatis.mapper.common.BaseMapper
+  not-empty: true #设置 insert 和 update 中，是否判断字符串类型!=''
+  enum-as-simple-type: true # 枚举按简单类型处理
+
+# 如果想看到mybatis日志需要做如下配置
+logging:
+  level:
+    com:
+      battch: debug
+
+######### 分页插件 ##########
+pagehelper:
+  helper-dialect: mysql
+  pagehelper:
+    params: count=countSql
+    pagehelper.reasonable: false
+    pagehelper.support-methods-arguments: true
+
+swagger:
+  basepackage: com.xfdmao.fcat.coin.controller
+  service:
+    name: fcat-coin
+    description: fcat-coin后端服务接口
+    developer: F1

@@ -1,6 +1,5 @@
 package com.nephelo.user.config;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
@@ -14,9 +13,6 @@ import org.springframework.data.redis.core.ValueOperations;
 
 import java.lang.reflect.Method;
 
-/**
- * Created by rick on 2017/12/16.
- */
 @Configuration
 @EnableCaching
 public class RedisConfig extends CachingConfigurerSupport {

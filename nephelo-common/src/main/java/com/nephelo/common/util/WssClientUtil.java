@@ -13,7 +13,7 @@ import java.util.Map;
  */
 public class WssClientUtil {
 	private static final Logger LOG = LogManager.getLogger(WssClientUtil.class);
-	public static String fcatRISKREPORT_HANDLER = "fcatRiskReport";
+	public static String RISKREPORT_HANDLER = "RiskReport";
 	public static String HIGHRISKREPORT_HANDLER = "highRiskReport";
 	public static String WEIXINMONITOR_HANDLER = "monitorReport";
 //	private static ConfigPropertiesCache propertiesCache = ConfigPropertiesCache.getInstance();

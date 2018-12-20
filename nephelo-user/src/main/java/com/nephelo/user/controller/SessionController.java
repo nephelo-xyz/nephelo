@@ -30,7 +30,7 @@ public class SessionController extends TUserServiceFeign {
     public JSONObject sessionUserInfo()throws Exception{
         try {
             SessionInfo sessionInfo  = (SessionInfo) request.getSession().getAttribute("sessionInfo");
-            logger.info("FCat:sessionInfo:{}",sessionInfo);
+            logger.info("nephelo:sessionInfo:{}",sessionInfo);
             return JsonUtil.getSuccessJsonObject(sessionInfo);
         }catch ( Exception e){
             e.printStackTrace();

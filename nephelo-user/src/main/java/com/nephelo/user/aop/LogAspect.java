@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by jack on 2017/7/10.
+ * Created by nephelo on 2017/7/10.
  * 记录调用Controller的日志
  */
 @Aspect
@@ -74,11 +74,11 @@ public class LogAspect {
         tUserLog.setSessionId(request.getSession().getId());
         try {
             String ip = HttpUtil.getIpAddr(request);
-            logger.info("FCat: ip:{}", ip);
+            logger.info("nephelo: ip:{}", ip);
             tUserLog.setIp(ip);
         } catch (Exception e) {
             e.printStackTrace();
-            logger.info("FCat: ip error");
+            logger.info("nephelo: ip error");
         }
         SessionInfo sessionInfo = (SessionInfo) request.getSession().getAttribute("sessionInfo");
         if (sessionInfo != null && StringUtils.isNotBlank(sessionInfo.getUsername())) {

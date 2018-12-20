@@ -89,8 +89,8 @@ pagehelper:
     pagehelper.support-methods-arguments: true
 
 swagger:
-  basepackage: com.xfdmao.fcat.coin.controller
+  basepackage: com.nephelo.user.controller
   service:
-    name: fcat-coin
-    description: fcat-coin后端服务接口
+    name: nephelo-user
+    description: nephelo-user后端服务接口
     developer: F1

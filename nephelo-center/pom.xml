@@ -19,7 +19,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>fcat-center</finalName>
+		<finalName>nephelo-center</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

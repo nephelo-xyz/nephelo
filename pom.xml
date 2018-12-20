@@ -27,6 +27,7 @@
         <module>nephelo-user</module>
         <module>nephelo-oss</module>
         <module>nephelo-api</module>
+        <module>nephelo-consumer</module>
     </modules>
 
     <developers>

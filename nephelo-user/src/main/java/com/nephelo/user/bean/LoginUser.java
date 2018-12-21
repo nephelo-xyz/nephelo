@@ -4,7 +4,7 @@ package com.nephelo.user.bean;
 import java.io.Serializable;
 
 /**
- * Created by xiangfei on 2017/9/16.
+ * Created by nephelo on 2018//9/16.
  */
 public class LoginUser implements Serializable{
 

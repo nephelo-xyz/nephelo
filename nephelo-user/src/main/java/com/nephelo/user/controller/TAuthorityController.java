@@ -10,7 +10,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Created by xiangfei on 2017/10/17.
+ * Created by nephelo on 2018//10/17.
  */
 @RestController
 @RequestMapping("v1/tAuthority")

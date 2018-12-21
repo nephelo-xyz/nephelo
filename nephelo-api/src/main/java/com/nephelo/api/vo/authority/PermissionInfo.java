@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * Created by xiangfei on 2017/10/16.
+ * Created by nephelo on 2018/12/21.
  */
 @Data
 public class PermissionInfo implements Serializable{

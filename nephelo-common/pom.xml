@@ -148,8 +148,6 @@
             <artifactId>mybatis-spring</artifactId>
             <version>${mybatis.spring.version}</version>
         </dependency>
-
-
         <!-- security -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -171,7 +169,6 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>
             <version>1.8.9.RELEASE</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>

@@ -1,7 +1,7 @@
 package com.nephelo.common.enumtype;
 
 /**
- * Created by nephelo on 2017/7/3.
+ * Created by nephelo on 2018//7/3.
  */
 public enum ResultCodeEnum {
 

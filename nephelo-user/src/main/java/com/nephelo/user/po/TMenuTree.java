@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.Date;
 
 /**
- * Created by xiangfei on 2017/10/17.
+ * Created by nephelo on 2018/12/21.
  */
 @Data
 public class TMenuTree extends TreeNode {

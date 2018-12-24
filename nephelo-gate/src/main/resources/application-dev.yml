@@ -52,7 +52,8 @@ security:
     user:
         name: admin
         password: admin
-        role: USER
+        role:
+        - USER
     basic:
       enabled: false
 

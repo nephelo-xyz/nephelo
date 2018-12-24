@@ -3,7 +3,7 @@ spring:
         name: nephelo-gate
     redis:
         host:  localhost
-        password:
+        password: 123456
         database: 6
         pool:
           max-active: 8
@@ -15,7 +15,7 @@ spring:
         cache: false
 
 server:
-    port: 8965
+    port: 4004
 
 zuul:
   routes:
@@ -35,7 +35,7 @@ ribbon:
   ConnectTimeout: 60000
   nephelo-user:
   ribbon:
-    listOfServers: localhost:8964
+    listOfServers: localhost:4002
 fcat-angular:
   ribbon:
     listOfServers: localhost:4200
@@ -46,7 +46,7 @@ eureka:
         healthCheckUrlPath: ${management.context-path}/health
     client:
         serviceUrl:
-            defaultZone: http://localhost:8961/eureka/
+            defaultZone: http://localhost:4001/eureka/
 security:
     oauth2:
       client:

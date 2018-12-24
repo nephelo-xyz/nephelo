@@ -26,6 +26,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
+@RequestMapping(value = "v1/tUser")
 public class TUserController extends BaseController<TUserService, TUser, Integer> {
     @Resource
     private TMenuService tMenuService;

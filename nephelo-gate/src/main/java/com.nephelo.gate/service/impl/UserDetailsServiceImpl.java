@@ -23,12 +23,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        logger.info("FCat:loadUserByUsername:{}",username);
+        logger.info("nephelo:loadUserByUsername:{}", username);
         if (StringUtils.isBlank(username)) {
             throw new UsernameNotFoundException("用户名为空");
         }
         TUserVo tUserVo = iUserService.getByUsername(username);
-        if(tUserVo==null){
+        if (tUserVo == null) {
             throw new UsernameNotFoundException("登录账号不存在");
         }
 

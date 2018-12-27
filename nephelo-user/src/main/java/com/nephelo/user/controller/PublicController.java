@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class PublicController {
-    @GetMapping("")
+    @GetMapping("publicUser")
     public String home() {
         return "nephelo User";
     }

@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.session.data.redis.RedisFlushMode;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
@@ -12,9 +13,10 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableCaching //开启redis缓存
-@ServletComponentScan("com.neohelo.user.config.druid")
+@ServletComponentScan("com.nephelo.user.config.druid")
 @EnableRedisHttpSession(redisFlushMode = RedisFlushMode.IMMEDIATE)
 @EnableAsync
+@EnableFeignClients
 public class NepheloUserApplication {
     public static void main(String[] args) {
         SpringApplication.run(NepheloUserApplication.class, args);

@@ -21,6 +21,7 @@ zuul:
   routes:
     nephelo-user:
       path: /nephelo-user/**
+      serviceId: nephelo-user
     fcat-web-uat:
       path: /fcat-angular/**
   sensitive-headers:
@@ -30,7 +31,7 @@ zuul:
 
 ribbon:
   eureka:
-    enabled: false
+    enabled: true
   ReadTimeout: 60000
   ConnectTimeout: 60000
   nephelo-user:

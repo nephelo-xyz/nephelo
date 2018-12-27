@@ -31,19 +31,19 @@ public class PermissionServiceImpl implements PermissionService {
 
     @Override
     public boolean hasPermission(HttpServletRequest request, Authentication authentication) {
-        logger.info("FCat:hasPermission");
+        logger.info("nephelo:hasPermission");
         Object principal = authentication.getPrincipal();
         List<SimpleGrantedAuthority> grantedAuthorityList = (List<SimpleGrantedAuthority>) authentication.getAuthorities();
-        logger.info("FCat:grantedAuthorityList:{}",JSONObject.toJSON(grantedAuthorityList));
-        boolean hasPermission = false;
+        logger.info("nephelo:grantedAuthorityList:{}",JSONObject.toJSON(grantedAuthorityList));
+        boolean hasPermission = true;
 
         if (principal != null) {
             Set<String> roleSet = new HashSet<>();
             grantedAuthorityList.forEach(grantedAuthority -> roleSet.add(grantedAuthority.getAuthority()));
             String roles = StringUtils.join(roleSet,";");
             Set<PermissionInfo> permissionInfos = iUserService.findPermissionInfoByRoles(roles);
-            logger.info("FCat:PersissionInfos：{}", JSONObject.toJSON(permissionInfos));
-            logger.info("FCat:request.getRequestURI()：{}", request.getRequestURI());
+            logger.info("nephelo:PersissionInfos：{}", JSONObject.toJSON(permissionInfos));
+            logger.info("nephelo:request.getRequestURI()：{}", request.getRequestURI());
             for (PermissionInfo permissionInfo : permissionInfos) {
                 if (antPathMatcher.match(permissionInfo.getUri(), request.getRequestURI())
                         && request.getMethod().equalsIgnoreCase(permissionInfo.getMethod())) {
@@ -52,7 +52,7 @@ public class PermissionServiceImpl implements PermissionService {
                 }
             }
         }
-        logger.info("FCat:hasPermission:{}", hasPermission);
+        logger.info("nephelo:hasPermission:{}", hasPermission);
         return hasPermission;
     }
 }

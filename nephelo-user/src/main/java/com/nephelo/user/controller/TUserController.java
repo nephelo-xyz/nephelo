@@ -17,6 +17,8 @@ import com.nephelo.user.service.TElementService;
 import com.nephelo.user.service.TMenuService;
 import com.nephelo.user.service.TUserService;
 import io.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,7 +34,6 @@ public class TUserController extends BaseController<TUserService, TUser, Integer
     private TMenuService tMenuService;
     @Resource
     private TElementService tElementService;
-
     /**
      * 注册用户
      *

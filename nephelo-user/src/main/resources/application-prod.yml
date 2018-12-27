@@ -75,12 +75,16 @@ hystrix:
           thread:
             timeoutInMilliseconds: 30000 #缺省为1000
 
+ribbon:
+  eureka:
+    enabled: true
+
 logging:
     level:
         tk.mybatis: DEBUG
         com.nephelo.user: DEBUG
     config: classpath:logback.xml
-    path: /neohelo/user
+    path: /nephelo/user
 
 swagger:
     basepackage: com.nephelo.user.controller

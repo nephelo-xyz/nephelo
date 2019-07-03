@@ -9,7 +9,7 @@ spring:
           min-idle: 0
           max-idle: 0
           max-wait: -1
-        password: 123456
+        password:
         port: 6379
     thymeleaf:
         mode: LEGACYHTML5
@@ -52,8 +52,7 @@ security:
     user:
         name: admin
         password: admin
-        role:
-        - USER
+        role: USER
     basic:
       enabled: false
 

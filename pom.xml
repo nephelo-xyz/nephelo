@@ -27,8 +27,10 @@
         <module>nephelo-user</module>
         <module>nephelo-oss</module>
         <module>nephelo-api</module>
-        <module>nephelo-consumer</module>
+        <module>nephelo-springmvc</module>
+        <module>taotao</module>
         <module>nephelo-gate</module>
+        <module>nephelo-spring</module>
     </modules>
 
     <developers>

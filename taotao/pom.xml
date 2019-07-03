@@ -8,6 +8,12 @@
     <artifactId>taotao</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <parent>
+        <artifactId>nephelo</artifactId>
+        <groupId>com.nephelo</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <name>taotao</name>
 
     <modules>
         <module>taotao-common</module>

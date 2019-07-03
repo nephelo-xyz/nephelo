@@ -27,4 +27,7 @@ public interface IUserServiceFeign {
 	@RequestMapping(value = "/tElementServiceFeign/findPermissionInfoByRoles/{roles}", method = RequestMethod.POST)
 	Set<PermissionInfo> findPermissionInfoByRoles(@PathVariable("roles") String roles);
 
+	@RequestMapping(value = "/v1/tUser/register")
+	Set<PermissionInfo> findPermissionInfoByRole(@PathVariable("roles") String roles);
+
 }

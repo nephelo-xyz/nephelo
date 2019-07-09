@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<mapper namespace="com.nephelo.mybatis.dao.UserDao">
+    <insert id="addUser">
+        insert into t_user(username, age , birthday) values(#{username}, #{age} , #{birthday})
+    </insert>
+</mapper>

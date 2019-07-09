@@ -31,6 +31,8 @@
         <module>taotao</module>
         <module>nephelo-gate</module>
         <module>nephelo-spring</module>
+        <module>nephelo-study</module>
+        <module>nephelo-mybatis</module>
     </modules>
 
     <developers>

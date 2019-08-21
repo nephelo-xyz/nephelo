@@ -9,5 +9,4 @@ public class NepheloDhxApplication {
     public static void main(String[] args) {
         SpringApplication.run(NepheloDhxApplication.class, args);
     }
-
 }

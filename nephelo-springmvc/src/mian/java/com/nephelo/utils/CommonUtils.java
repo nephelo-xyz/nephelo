@@ -29,9 +29,9 @@ public class CommonUtils {
             Node child = childNodes.item(i);
             if (child instanceof Element) {
                 Element element = (Element) child;
-//                System.out.println(element.getTagName());// context:component-scan
+//               log.info(element.getTagName());// context:component-scan
                 String attribute = element.getAttribute("base-package");
-//                System.out.println(attribute);// com.nephelo
+//               log.info(attribute);// com.nephelo
                 if (attribute != null || "".equals(attribute.trim())) {
                     return attribute.trim();
                 }

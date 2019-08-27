@@ -11,6 +11,6 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void test() {
-        System.out.println("我是UserDao");
+       log.info("我是UserDao");
     }
 }

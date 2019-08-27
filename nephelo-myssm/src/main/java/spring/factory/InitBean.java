@@ -50,8 +50,8 @@ public class InitBean extends BeanDefinition {
             String beanId = entry.getKey();
             String className = entry.getValue().getClassName();
             try {
+                log.info("initXmlBeans beanId:{} className:{}", beanId, className);
                 aClass = Class.forName(className);
-
             } catch (ClassNotFoundException e) {
                 log.error("xml中{}无法实例化", className);
                 e.printStackTrace();
@@ -68,7 +68,7 @@ public class InitBean extends BeanDefinition {
      */
     public void initAutowiredBeans(String contextConfigLocation) {
         List<String> componentList = super.getComponentList(contextConfigLocation);
-        System.out.println("实例化的顺序" + componentList);
+        log.info("实例化的顺序" + componentList);
         //扫描到有注解的类，初始化类的名单
         for (String className :
                 componentList) {
@@ -97,16 +97,15 @@ public class InitBean extends BeanDefinition {
         //先判断这个类有没有接口，如果有接口，将接口装配
         Class<?>[] interfaces = aClass.getInterfaces();
 
-       //如果类是接口，注入的对象是动态代理的对象
-        if (aClass.isInterface()){
+        //如果类是接口，注入的对象是动态代理的对象
+        if (aClass.isInterface()) {
             MySqlSession mySqlSession = new MySqlSession();
-            beanContainerMap.put(aClass.getName(),mySqlSession.getMapper(aClass, Constants.mybatisConfigLocation));
+            beanContainerMap.put(aClass.getName(), mySqlSession.getMapper(aClass, Constants.mybatisConfigLocation));
         }
-       //如果不是接口的实现类，也就是controller层
+        //如果不是接口的实现类，也就是controller层
         else if (interfaces == null || interfaces.length == 0) {
             noInterfaceInit(className, className);
-        }
-        else {
+        } else {
             for (Class<?> interfaceClass :
                     interfaces) {
                 boolean flag = isExistInContainer(className);
@@ -128,7 +127,7 @@ public class InitBean extends BeanDefinition {
     public void noInterfaceInit(String className, String interfaceName) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
         Class<?> aClass = Class.forName(className);
         //bean实例化
-        System.out.println("实例化的名字"+aClass.getName());
+        log.info("实例化的名字" + aClass.getName());
         Object object = aClass.newInstance();
         Field[] declaredFields = aClass.getDeclaredFields();
         for (Field field :
@@ -143,7 +142,7 @@ public class InitBean extends BeanDefinition {
                 for (Map.Entry<String, Object> entry :
                         entries) {
                     String type = field.getType().getName();
-                    if (entry.getKey().equals(type)){
+                    if (entry.getKey().equals(type)) {
                         field.set(object, entry.getValue());
                     }
                 }
@@ -180,12 +179,12 @@ public class InitBean extends BeanDefinition {
     public static void main(String[] args) {
         InitBean initBean = new InitBean();
         initBean.initBeans();
-        System.out.println(initBean.beanContainerMap);
+        log.info("beanContainerMap 对象 -> {}", initBean.beanContainerMap);
         //测试初始化是否成功
  /*       InitBean initBean = new InitBean();
         initBean.initBeans();
         JDBCUtils jDBCUtils = null;
-        System.out.println(initBean.beanContainerMap);
+       log.info(initBean.beanContainerMap);
         Set<Map.Entry<String, Object>> entries = initBean.beanContainerMap.entrySet();
         for (Map.Entry<String, Object> entry :
                 entries) {
@@ -216,8 +215,8 @@ public class InitBean extends BeanDefinition {
         }
         try {
             while (rs.next()){
-                System.out.println(rs.getString(1));
-                System.out.println(rs.getString(2));
+               log.info(rs.getString(1));
+               log.info(rs.getString(2));
             }
         } catch (SQLException e) {
             e.printStackTrace();

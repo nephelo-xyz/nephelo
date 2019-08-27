@@ -2,15 +2,15 @@
 <beans>
 
     <bean id="hostess" class="spring.Person">
-        <property name ="userName" value = "admin"></property>
-        <property name ="passWord" value = "admin"></property>
+        <property name="userName" value="admin"/>
+        <property name="passWord" value="admin"/>
     </bean>
 
     <bean class="spring.mybatis.JDBCUtils" id="dataSource">
-        <property name="user" value="root"></property>
-        <property name="password" value="qinliang"></property>
-        <property name="driver" value="com.mysql.jdbc.Driver"></property>
-        <property name="url" value="jdbc:mysql://localhost:3306/test"></property>
+        <property name="user" value="root"/>
+        <property name="password" value="qinliang"/>
+        <property name="driver" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/test"/>
     </bean>
 
     <component-scan base-package="spring.demo" >

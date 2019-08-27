@@ -17,7 +17,7 @@ public class Person {
         this.passWord = passWord;
     }
     public void test(){
-        System.out.println("哇塞，管用了唉");
+       log.info("哇塞，管用了唉");
     }
 }
 

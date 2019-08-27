@@ -6,6 +6,6 @@ import com.nephelo.annotation.MyService;
 public class TestService2Impl implements TestService2 {
     @Override
     public void doServiceTest() {
-        System.out.println("业务层执行方法了2222222222222");
+       log.info("业务层执行方法了2222222222222");
     }
 }

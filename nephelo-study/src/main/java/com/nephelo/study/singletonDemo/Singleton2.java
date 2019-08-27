@@ -13,7 +13,7 @@ public class Singleton2 implements Serializable {
 
     private Singleton2() {
         if (singleton != null){
-            System.out.println("反射破解了");
+           log.info("反射破解了");
         }
     }
 

@@ -22,15 +22,15 @@
         <version>1.5.2.RELEASE</version>
     </parent>
     <modules>
-        <module>nephelo-common</module>
-        <module>nephelo-center</module>
-        <module>nephelo-user</module>
-        <module>nephelo-oss</module>
-        <module>nephelo-dhx</module>
-        <module>nephelo-api</module>
+        <module>nephelo-common-c</module>
+        <module>nephelo-center-c</module>
+        <module>nephelo-user-c</module>
+        <module>nephelo-oss-c</module>
+        <module>nephelo-dhx-c</module>
+        <module>nephelo-api-c</module>
         <module>nephelo-springmvc</module>
         <module>taotao</module>
-        <module>nephelo-gate</module>
+        <module>nephelo-gate-c</module>
         <module>nephelo-study</module>
         <module>nephelo-mybatis</module>
         <module>nephelo-myssm</module>

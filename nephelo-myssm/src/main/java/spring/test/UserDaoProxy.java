@@ -16,9 +16,9 @@ public class UserDaoProxy implements IUserDao {
 
     @Override
     public void save() {
-        System.out.println("开启事务");
+       log.info("开启事务");
         target.save();
-        System.out.println("关闭事务");
+       log.info("关闭事务");
     }
 
 }

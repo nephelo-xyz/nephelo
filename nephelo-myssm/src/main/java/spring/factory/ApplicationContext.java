@@ -225,7 +225,7 @@ public class ApplicationContext extends FileSystemXmlApplicationContext implemen
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ApplicationContext(Constants.contextConfigLocation);
         Person person = (Person) applicationContext.getBean("hostess");
-        System.out.println(person.getPassWord());
+       log.info(person.getPassWord());
     }
 }
 

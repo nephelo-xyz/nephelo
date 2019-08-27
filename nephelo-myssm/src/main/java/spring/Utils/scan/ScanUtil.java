@@ -230,7 +230,7 @@ public class ScanUtil {
                     interfaceNameList) {
                 interfaceAndImplMap.put(spareInterfaceName, "proxy");
             }
-            System.out.println("已经存在的" + interfaceNameList);
+           log.info("已经存在的" + interfaceNameList);
 
         }
         return null;
@@ -259,7 +259,7 @@ public class ScanUtil {
 
     public static void main(String[] args) {
 
-        System.out.println(getComponentList("spring.demo"));
+       log.info(getComponentList("spring.demo"));
     }
 
 

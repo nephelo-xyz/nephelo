@@ -24,9 +24,9 @@ public class InvocationHandlerImpl implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         Object result = null;
-        System.out.println("调用开始");
+       log.info("调用开始");
         result = method.invoke(target,args);
-        System.out.println("调用结束");
+       log.info("调用结束");
         return result;
     }
 

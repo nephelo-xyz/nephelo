@@ -82,7 +82,7 @@ public class MyDispatcherServlet extends HttpServlet {
             } else {
                 // 将形如pers.hdh.controller.Xxx的类限定名字符串加入beanNames中
                 beanNames.add(basePackName + "." + file.getName().replace(".class", ""));
-                System.out.println("扫描到的类有：" + basePackName + "." + file.getName().replace(".class", ""));
+               log.info("扫描到的类有：" + basePackName + "." + file.getName().replace(".class", ""));
             }
         }
     }

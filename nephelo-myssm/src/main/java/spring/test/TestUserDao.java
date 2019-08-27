@@ -10,7 +10,7 @@ public class TestUserDao implements IUserDao {
 
     @Override
     public void save() {
-        System.out.println("已经保存数据...");
+       log.info("已经保存数据...");
     }
 
 

@@ -1,0 +1,11 @@
+server:
+  port: 8966
+
+eureka:
+  client:
+      serviceUrl:
+          defaultZone: http://localhost:8962/eureka/
+
+spring:
+  application:
+      name: nephelo-oss

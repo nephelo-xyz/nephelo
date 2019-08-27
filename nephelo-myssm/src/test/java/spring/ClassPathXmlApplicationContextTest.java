@@ -14,7 +14,7 @@ public class ClassPathXmlApplicationContextTest {
 /*
         FileSystemXmlApplicationContext fileSystemXmlApplicationContext = new FileSystemXmlApplicationContext(Constants.contextConfigLocation);
         Person person = (Person) fileSystemXmlApplicationContext.getBean("bean");
-        System.out.println(person);
+       log.info(person);
 */
     }
 }

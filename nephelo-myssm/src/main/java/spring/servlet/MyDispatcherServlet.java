@@ -86,7 +86,7 @@ public class MyDispatcherServlet extends HttpServlet {
                     String returnViewName = myModelAndView.getView();
                     //返回的路径
                     String resultAddress = prefix + returnViewName + suffix;
-                    System.out.println(resultAddress);
+                   log.info(resultAddress);
                     try {
                         //  request.setAttribute("test","testModel");
                         request.getRequestDispatcher(resultAddress).forward(request, response);

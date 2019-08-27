@@ -12,6 +12,6 @@ public class RegisterDaoImpl implements RegisterDao{
 
     @Override
     public void register() {
-        System.out.println("我是RegisterDao");
+       log.info("我是RegisterDao");
     }
 }

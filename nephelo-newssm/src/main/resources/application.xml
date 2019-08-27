@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+
+    <bean id="hostess" class="spring.Person">
+        <property name="userName" value="admin"/>
+        <property name="passWord" value="admin"/>
+    </bean>
+
+    <bean class="spring.mybatis.JDBCUtils" id="dataSource">
+        <property name="user" value="root"/>
+        <property name="password" value="yanlin@123"/>
+        <property name="driver" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/taotao"/>
+    </bean>
+
+    <component-scan base-package="demo"/>
+</beans>

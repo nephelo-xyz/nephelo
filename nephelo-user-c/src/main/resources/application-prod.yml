@@ -2,8 +2,8 @@ spring:
     application:
         name: nephelo-user
     datasource:
-        name: nephelo-user-dataSource
-        url: jdbc:mysql://localhost/nephelo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+        name: nephelo-user-prod-dataSource
+        url: jdbc:mysql://localhost/sinoesb?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
         username: root
         password: yanlin@123
         type: com.alibaba.druid.pool.DruidDataSource

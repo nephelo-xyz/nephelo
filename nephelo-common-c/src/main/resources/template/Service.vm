@@ -1,0 +1,13 @@
+package ${package_name}.rpc.api;
+
+import com.nephelo.common.service.BaseService;
+import ${package_name}.dao.model.${model};
+import ${package_name}.dao.model.${model}Example;
+
+/**
+* ${model}Service接口
+* Created by nephelo on ${ctime}.
+*/
+public interface ${model}Service extends BaseService<${model}, ${model}Example> {
+
+}

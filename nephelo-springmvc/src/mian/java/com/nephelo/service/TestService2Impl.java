@@ -1,7 +1,9 @@
 package com.nephelo.service;
 
 import com.nephelo.annotation.MyService;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 @MyService
 public class TestService2Impl implements TestService2 {
     @Override

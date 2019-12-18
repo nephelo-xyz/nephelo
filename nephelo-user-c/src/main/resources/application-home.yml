@@ -14,10 +14,10 @@ spring:
   application:
     name: nephelo-user
   datasource:
-    name: nephelo-datasource
+    name: nephelo-user-home-datasource
     # jdbc-connector6之后名字变成下面这个,而且必须加入allowPublicKeyRetrieval=true参数
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost/nephelo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost/sinoesb?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
     type: com.alibaba.druid.pool.DruidDataSource
     username: root
     password: yanlin@123
@@ -43,7 +43,7 @@ spring:
     database: 0
     host: localhost
     port: 6379
-    password:
+    password: 123456
     timeout: 60 # 数据库连接超时时间，2.0 中该参数的类型为Duration，这里在配置的时候需要指明单位
     # 连接池配置，2.0中直接使用jedis或者lettuce配置连接池
     pool:

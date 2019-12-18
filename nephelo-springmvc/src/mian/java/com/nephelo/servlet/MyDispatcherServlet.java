@@ -6,6 +6,7 @@ import com.nephelo.annotation.MyRequestMapping;
 import com.nephelo.annotation.MyRequestParam;
 import com.nephelo.annotation.MyService;
 import com.nephelo.utils.CommonUtils;
+import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -30,6 +31,7 @@ import java.util.Map;
 /**
  * DispatcherServlet
  */
+@Log4j2
 public class MyDispatcherServlet extends HttpServlet {
     //扫描所有bean
     private List<String> beanNames = new ArrayList<>();

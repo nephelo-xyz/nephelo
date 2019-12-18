@@ -1,11 +1,13 @@
 package spring;
 
 import lombok.Data;
+import lombok.extern.log4j.Log4j2;
 
 /**
  *  @Author nephelo
  */
 @Data
+@Log4j2
 public class Person {
     private String userName;
     private String passWord;

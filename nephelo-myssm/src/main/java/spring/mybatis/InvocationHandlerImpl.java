@@ -1,5 +1,6 @@
 package spring.mybatis;
 
+import lombok.extern.log4j.Log4j2;
 import spring.test.IUserDao;
 import spring.test.TestUserDao;
 
@@ -13,6 +14,7 @@ import java.lang.reflect.Proxy;
  * @Data 2018/7/8
  * @Author nephelo
  */
+@Log4j2
 public class InvocationHandlerImpl implements InvocationHandler {
 
     private Object target;

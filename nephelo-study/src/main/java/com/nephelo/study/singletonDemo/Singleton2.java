@@ -1,5 +1,7 @@
 package com.nephelo.study.singletonDemo;
 
+import lombok.extern.log4j.Log4j2;
+
 import java.io.Serializable;
 
 /**
@@ -7,6 +9,7 @@ import java.io.Serializable;
  * 2.公有的 静态的 get实例方法
  * 3.静态的实例变量
  */
+@Log4j2
 public class Singleton2 implements Serializable {
     //懒汉式
     private static Singleton2 singleton;

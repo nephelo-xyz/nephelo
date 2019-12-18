@@ -3,6 +3,7 @@ package com.nephelo.study.test.singleton;
 import com.nephelo.study.singletonDemo.Singleton1;
 import com.nephelo.study.singletonDemo.Singleton2;
 import com.nephelo.study.singletonDemo.Singleton5;
+import lombok.extern.log4j.Log4j2;
 import org.junit.Test;
 
 import java.io.File;
@@ -11,7 +12,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.Constructor;
-
+@Log4j2
 public class Singleton {
 
     @Test

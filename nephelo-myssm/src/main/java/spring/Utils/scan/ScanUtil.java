@@ -1,6 +1,6 @@
 package spring.Utils.scan;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import spring.Utils.AnnotationUtils;
 import spring.Utils.ListAddUtils;
 import spring.annotation.MyAutowired;
@@ -13,7 +13,11 @@ import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -22,7 +26,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * 1 扫描包下的注解
  * 2 扫描包下的类名
  */
-@Slf4j
+@Log4j2
 public class ScanUtil {
 
     private static List<String> listClassName = new ArrayList<>();

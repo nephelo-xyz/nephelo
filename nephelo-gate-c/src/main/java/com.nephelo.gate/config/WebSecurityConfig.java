@@ -4,8 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.nephelo.common.enumtype.ResultCodeEnum;
 import com.nephelo.common.util.HttpHelper;
 import com.nephelo.common.util.JsonUtil;
+import com.nephelo.gate.filter.AjaxCorsFilter;
 import com.nephelo.gate.filter.CodeUsernamePasswordAuthenticationFilter;
-import com.nephelo.gate.filter.CorsFilter;
 import com.nephelo.gate.service.impl.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -31,7 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   private UserDetailsServiceImpl detailsService;
 
   @Autowired
-  private CorsFilter corsFilter;
+  private AjaxCorsFilter corsFilter;
 
   @Override
   public void configure(AuthenticationManagerBuilder auth) throws Exception {

@@ -20,7 +20,6 @@ public class BaseServiceImpl<M extends Mapper<T>, T> implements BaseService<T> {
         return mapper.selectByPrimaryKey(id);
     }
 
-
     @Override
     public List<T> selectList(T entity) {
         return mapper.select(entity);

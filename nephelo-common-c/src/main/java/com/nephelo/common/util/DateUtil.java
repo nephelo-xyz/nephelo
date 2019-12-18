@@ -1,5 +1,6 @@
 package com.nephelo.common.util;
 
+import lombok.extern.log4j.Log4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
@@ -35,6 +36,7 @@ import java.util.*;
  * @author huangym
  * 
  */
+@Log4j
 public class DateUtil {
 
 	private static final Logger LOG = LoggerFactory.getLogger(DateUtil.class);
@@ -101,7 +103,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param s
 	 *            UTC时间，格式:yyyyMMddHHmmssSSS
 	 * @return
@@ -111,7 +113,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param s
 	 *            日期字符串
 	 * @param pattern
@@ -174,7 +176,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param s
 	 *            日期字符串, yyyyMMdd|yyyyMMddHHmmssSSS,具体格式根据pattern来决定
 	 * @param pattern
@@ -187,7 +189,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param date
 	 *            本地日期对象
 	 * @param pattern
@@ -256,7 +258,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param date
 	 *            本地日期对象
 	 * @param timeZone
@@ -276,7 +278,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param date
 	 *            本地日期对象
 	 * @param timeZoneIdInt
@@ -288,17 +290,17 @@ public class DateUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return yyyyMMddHHmmssSSS
 	 */
 	public static long getLongDate() {
 		return formatDateToLong(new Date());
 	}
-	
+
 	public static long getLongDate(Date date) {
 		return formatDateToLong(date);
 	}
-	
+
 	public static long formatDateToLong(Date date) {
 		return formatDateToHbaseLong(date, BEIJING_TIME_ZONE);
 	}
@@ -323,7 +325,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param utcLong
 	 *            utcLong格式yyyyMMddHHmmssSSS
 	 * @param timeZoneIdInt
@@ -335,7 +337,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param utcLong
 	 *            utcLong格式yyyyMMddHHmmssSSS
 	 * @param timeZone
@@ -347,7 +349,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param dateLong
 	 *            utcLong格式yyyyMMddHHmmssSSS
 	 * @param timeZone
@@ -360,7 +362,7 @@ public class DateUtil {
 
 	/**
 	 * 根据用户设定的timeZoneIdInt，把utcLong(yyyyMMddHHmmssSSS)转化为显示的时间
-	 * 
+	 *
 	 * @param utcLong
 	 *            数据库中保存的大部分都是yyyyMMddHHmmssSSS
 	 * @param patternUtc
@@ -390,7 +392,7 @@ public class DateUtil {
 
 	/**
 	 * 根据用户设定的timeZoneIdInt，把utcLong(yyyyMMddHHmmssSSS)转化为显示的时间
-	 * 
+	 *
 	 * @param dateLong
 	 *            数据库中保存的大部分都是yyyyMMddHHmmssSSS
 	 * @param patternLong
@@ -419,7 +421,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param date
 	 *            北京时间
 	 * @param pattern
@@ -436,7 +438,7 @@ public class DateUtil {
 
 	/**
 	 * 根据用户设定的timeZoneIdInt，把utcLong(yyyyMMddHHmmssSSS)转化为显示的时间
-	 * 
+	 *
 	 * @param utcLong
 	 *            数据库中保存的大部分都是yyyyMMddHHmmssSSS
 	 * @param patternUtc
@@ -452,7 +454,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param dateStr
 	 * @param pattern
 	 * @param sourceTimeZone
@@ -544,7 +546,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param dateAnother
 	 * @param birthDate
 	 * @return
@@ -560,7 +562,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param date
 	 * @return
 	 */
@@ -574,7 +576,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param date
 	 * @return
 	 */
@@ -607,7 +609,7 @@ public class DateUtil {
 
 	/**
 	 * 返回给定月份的最大日期
-	 * 
+	 *
 	 * @param year
 	 *            year >0
 	 * @param month
@@ -633,7 +635,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param startTime
 	 *            UTC时间，格式:yyyyMMddHHmmssSSS
 	 * @param endTime
@@ -646,7 +648,7 @@ public class DateUtil {
 
 	/**
 	 * 自动缩小时间区间
-	 * 
+	 *
 	 * @param startTime
 	 *            UTC时间，格式:yyyyMMddHHmmssSSS
 	 * @param endTime
@@ -677,7 +679,7 @@ public class DateUtil {
 	/**
 	 * 判断有效期<br>
 	 * expire 期满；文件、协议等（因到期而）失效；断气；逝世
-	 * 
+	 *
 	 * @param timeLongUtc
 	 *            yyyyMMddHHmmssSSS
 	 * @return true=有效期内 false=失效
@@ -767,14 +769,14 @@ public class DateUtil {
     }
 	/**
 	 * calculateRemainTime 计算剩余时间: xx天xx小时xx分钟(xx秒钟)
-	 * 
+	 *
 	 * @param expiredDate
 	 *            失效时间
 	 * @param showSecond
 	 *            显示秒钟
 	 * @return
 	 * @author jonex 2015年4月16日
-	 * 
+	 *
 	 */
 	public static String calculateRemainTime(Date expiredDate, boolean showSecond) {
 		Calendar expiredCalendar = Calendar.getInstance();
@@ -805,7 +807,7 @@ public class DateUtil {
 	}
 
 	/**
-	 * 获取今天还剩下多少秒 
+	 * 获取今天还剩下多少秒
 	 * @return
 	 */
 	public static int getMiao() {
@@ -867,7 +869,7 @@ public class DateUtil {
 			dateResult.append(year.trim());
 			dateResult.append("-");
 		}
-		
+
 		if(month.trim().length() == 1) {
 			dateResult.append("0" + month.trim());
 			dateResult.append("-");
@@ -875,7 +877,7 @@ public class DateUtil {
 			dateResult.append(month.trim());
 			dateResult.append("-");
 		}
-		
+
 		if(date.trim().length() == 1) {
 			dateResult.append("0" + date.trim());
 			dateResult.append("-");
@@ -894,26 +896,26 @@ public class DateUtil {
 	 * @param beforeDay 前几天
 	 * @return long yyyyMMddHHmmssSSS 格式
 	 */
-	public static long getSpecifiedDayBefore(Date date, int beforeDay) { 
-        Calendar calendar = Calendar.getInstance();  
+	public static long getSpecifiedDayBefore(Date date, int beforeDay) {
+        Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-        int day = calendar.get(Calendar.DATE);   
-        calendar.set(Calendar.DATE, day - beforeDay);  
+        int day = calendar.get(Calendar.DATE);
+        calendar.set(Calendar.DATE, day - beforeDay);
         return getLongDate(calendar.getTime());
-    }  
-	
+    }
+
 	public static Date getTodayWithStr(Date date,String hourMinuteSecondStr){
 		String formatDate = DateUtil.formatDate(date, DateUtil.TIME_PATTERN_DAY) + hourMinuteSecondStr;
 		Date todayMorning = DateUtil.toDate(formatDate,DateUtil.TIME_PATTERN_DISPLAY);
-		return todayMorning; 
+		return todayMorning;
 	}
-	
+
 	public static int getMonthDiff(Date date,Date anotherDate){
 		int start = getMonth(date);
 		int end = getMonth(anotherDate);
 		return Math.abs(start-end);
 	}
-	
+
 	public static Date getLastDayOfMonth(Date date){
 		int dayOfMonthMax = getDayOfMonthMax(date.getYear(), date.getMonth());
 		int day = getDay(date);
@@ -921,9 +923,9 @@ public class DateUtil {
 		//System.out.println(formatDate(anotherDate,DateUtil.TIME_PATTERN_DISPLAY));
 		return anotherDate;
 	}
-	
+
 	public static Date getLargestMonth(Date date){
-		
+
 		int dayOfMonthMax = getDayOfMonthMax(date.getYear(), date.getMonth());
 		int day = getDay(date);
 		Date anotherDate = DateUtil.toAnotherDate(date, dayOfMonthMax-day, Calendar.DATE);
@@ -931,7 +933,7 @@ public class DateUtil {
 		formatDate = formatDate.substring(0, 11) + "23:59:59";
 		return toDate(formatDate, TIME_PATTERN_DISPLAY);
 	}
-	
+
 	public static String getMonthDate(Integer month){
         Date date = new Date();
         int month2 =  month - DateUtil.getMonth(date);
@@ -941,7 +943,7 @@ public class DateUtil {
         String formatDate = formatDate(anotherDate, "yyyy-MM");
         return formatDate;
     }
-	
+
 	public static Date getMinestMonth(Date date){
 		String formatDate = formatDate(date, TIME_PATTERN_DISPLAY);
 		formatDate = formatDate.substring(0, 8) + "01 00:00:00";
@@ -986,5 +988,5 @@ public class DateUtil {
 		}
 		System.out.println();
 	}*/
-	
+
 }

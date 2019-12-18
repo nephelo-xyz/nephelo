@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import lombok.extern.log4j.Log4j2;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
@@ -22,6 +23,7 @@ import org.apache.commons.net.ftp.FTPReply;
  * @date	2015年7月29日下午8:11:51
  * @version 1.0
  */
+@Log4j2
 public class FtpUtil {
 
 	/** 

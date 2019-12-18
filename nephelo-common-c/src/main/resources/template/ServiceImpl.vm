@@ -1,0 +1,27 @@
+package ${package_name}.rpc.service.impl;
+
+import com.nephelo.common.service.BaseService;
+import ${package_name}.dao.mapper.${model}Mapper;
+import ${package_name}.dao.model.${model};
+import ${package_name}.dao.model.${model}Example;
+import ${package_name}.rpc.api.${model}Service;
+import lombok.extern.log4j.Log4j2;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+* ${model}Service实现
+* Created by nephelo on ${ctime}.
+*/
+@Service
+@Transactional
+@Log4j2
+public class ${model}ServiceImpl extends BaseServiceImpl<${model}Mapper, ${model}, ${model}Example> implements ${model}Service {
+
+    @Autowired
+    ${model}Mapper ${mapper}Mapper;
+
+}
